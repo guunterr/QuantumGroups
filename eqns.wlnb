@@ -1,0 +1,415 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "Remove[\"Global`*\"]",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997640658,
+     "endTime": 1705997640720
+    },
+    "executionOrder": 1492,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "MakeVariable[name_, i_,j_,k_,l_] := ToExpression[StringJoin[\n    \"$\",ToString[name],\n    \"[\", ToString[i], \"]\",\n    \"[\", ToString[j], \"]\",\n    \"[\", ToString[k], \"]\",\n    \"[\", ToString[l], \"]\"\n]]",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997640720,
+     "endTime": 1705997640781
+    },
+    "executionOrder": 1493,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "n=1;\nAs = Flatten[Table[\n    MakeVariable[A,i,j,k,l],\n    {i,-n,n},{j,-n,n},{k,-n,n},{l,-n,n}]];\nBs = Flatten[Table[\n    MakeVariable[B,i,j,k,l],\n    {i,-n,n},{j,-n,n},{k,-n,n},{l,-n,n}]];\nCs = Flatten[Table[\n    MakeVariable[C,i,j,k,l],\n    {i,-n,n},{j,-n,n},{k,-n,n},{l,-n,n}]];\nDs = Flatten[Table[\n    MakeVariable[D,i,j,k,l],\n    {i,-n,n},{j,-n,n},{k,-n,n},{l,-n,n}]];\nvars = Join[As, Bs, Cs, Ds]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><w>≪</w><w>308</w><w>≫</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow><wb>}</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      }
+     ],
+     "id": "8e196441-974b-4894-927b-e759c7f7fa6c",
+     "metadata": {
+      "cellLabel": "Out[1499]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997640781,
+     "endTime": 1705997641205
+    },
+    "executionOrder": 1494,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "triveqs1 = Flatten[Table[\n    MakeVariable[A,0,0,i,j] ==  MakeVariable[A,i,j,0,0] == 1,\n    {i,-n,n},{j,-n,n}]];\ntriveqs2 = Flatten[Table[\n    MakeVariable[C,i,j,0,0] == MakeVariable[B,0,0,i,j] == KroneckerDelta[i,j],\n    {i,-n,n},{j,-n,n}]];\ntriveqs3 = Flatten[Table[\n    MakeVariable[A,i,j,k,l] == MakeVariable[A,-i,-j,-k,-l],\n    {i,-n,n},{j,-n,n}, {k,-n,n}, {l,-n,n}]];\ntriveqs4 = Flatten[Table[\n    MakeVariable[B,i,j,k,l] == MakeVariable[B,-i,-j,l,k],\n    {i,-n,n},{j,-n,n}, {k,-n,n}, {l,-n,n}]];\ntriveqs5 = Flatten[Table[\n    MakeVariable[C,i,j,k,l] == MakeVariable[C,j,i,-k,-l],\n    {i,-n,n},{j,-n,n}, {k,-n,n}, {l,-n,n}]];\ntriveqs6 = Flatten[Table[\n    MakeVariable[D,i,j,k,l] == MakeVariable[D,j,i,l,k],\n    {i,-n,n},{j,-n,n}, {k,-n,n}, {l,-n,n}]];\ntriveqs = Join[triveqs1,triveqs2,triveqs3,triveqs4,triveqs5,triveqs6];\n",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997641205,
+     "endTime": 1705997641617
+    },
+    "executionOrder": 1500,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "triveqs = Flatten[Reduce[triveqs, Join[As, Bs, Cs, Ds],  Complexes]]\ntrivsols = ToRules[triveqs]\nLength[triveqs]\nLength[trivsols]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>≪</w><w>1</w><w>≫</w></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      }
+     ],
+     "id": "488a164f-a6a7-4d35-984f-1cedb0a030a2",
+     "metadata": {
+      "cellLabel": "Out[1507]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><w>≪</w><w>164</w><w>≫</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow></wrow><wb>}</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      }
+     ],
+     "id": "98de804c-9c82-4324-9933-84b8626aa6b1",
+     "metadata": {
+      "cellLabel": "Out[1508]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>175</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "175",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "9fe00ac5-7a10-4884-acc4-258331f10d06",
+     "metadata": {
+      "cellLabel": "Out[1509]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>175</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "175",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "feaa186c-b349-48dc-a8a8-0a73ff5797dd",
+     "metadata": {
+      "cellLabel": "Out[1510]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997641617,
+     "endTime": 1705997642137
+    },
+    "executionOrder": 1507,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "nontriveqs1 = Flatten[Table[\n    Sum[MakeVariable[B,i,j,r,z1], {z1, -n, n}]\n        * Sum[MakeVariable[B,k,l,z1,y], {z1, -n, n}] \n        == Sum[MakeVariable[B,k,l,r,z1], {z1, -n, n}]\n        * Sum[MakeVariable[B,i,j,z1,y], {z1, -n, n}]\n    ,\n    {i,-n,n},{j,-n,n},{k,-n,n},{l,-n,n},{r,-n,n},{y,-n,n}]];\nnontriveqs2 = Flatten[Table[\n    Sum[MakeVariable[B,i,j,k,z1], {z1, -n, n}] \n        * Sum[MakeVariable[C,z1,u,r,s], {z1, -n, n}]  \n        == Sum[MakeVariable[B,i,j,z1,u], {z1, -n, n}]  \n        * Sum[MakeVariable[C,k,z1,r,s], {z1, -n, n}],\n    {i,-n,n},{j,-n,n},{k,-n,n},{u,-n,n},{r,-n,n},{s,-n,n}\n]];\nnontriveqs3 = Flatten[Table[\n    Sum[MakeVariable[B,i,j,k,z1], {z1, -n, n}]  \n        * Sum[MakeVariable[B,i,j,r,z2], {z1, -n, n}, {z2,-n, n}]  \n        * Sum[MakeVariable[D,z1,u,z2,y], {z1, -n, n}, {z2, -n, n}]  \n        == Sum[MakeVariable[B,i,j,z2,u], {z1, -n, n}, {z2, -n, n}]  \n        * Sum[MakeVariable[B,i,j,z1,y], {z1, -n, n}]  \n        * Sum[MakeVariable[D,k,z2,r,z1], {z1, -n, n}, {z2, -n, n}],\n    {i,-n,n},{j,-n,n},{k,-n,n},{u,-n,n},{r,-n,n},{y,-n,n}\n]];\nnontriveqs4 = Flatten[Table[\n    Sum[MakeVariable[C,i,z1,k,l],{z1, -n, n}]\n        * Sum[MakeVariable[C,z1,q,r,s],{z1, -n, n}]\n        == Sum[MakeVariable[C,i,z1,r,s],{z1, -n, n}]\n        * Sum[MakeVariable[C,z1,q,k,l],{z1, -n, n}],\n    {k,-n,n}, {l,-n,n}, {s,-n,n}, {i,-n,n}, {q,-n,n}, {r,-n,n} \n]];\nnontriveqs5 = Flatten[Table[\n    Sum[MakeVariable[B,k,l,z1,y], {z1, -n, n}] \n        * Sum[MakeVariable[C,i,z1,k,l], {z1,-n,n}] \n        * Sum[MakeVariable[D,z1,q,r,z2], {z1, -n, n}, {z2, -n,n}]\n        == Sum[MakeVariable[B,k,l,r,z1], {z1, -n, n}] \n        * Sum[MakeVariable[D,i,z1,z2,y], {z1,-n,n}, {z2,-n,n}] \n        * Sum[MakeVariable[C,z1,q,k,l], {z1, -n, n}],\n    {k,-n,n}, {l,-n,n}, {y,-n,n}, {i,-n,n}, {q,-n,n}, {r,-n,n} \n]];\nnontriveqs6 = Flatten[Table[\n    Sum[MakeVariable[C,z1,q,r,s], {z1, -n, n}]\n        * Sum[MakeVariable[C,z1,u,r,s], {z1, -n, n}]\n        * Sum[MakeVariable[D,i,z1,k,z2], {z1, -n, n}, {z2, -n, n}]\n        == Sum[MakeVariable[C,k,z1,r,s], {z1, -n, n}]\n        * Sum[MakeVariable[C,i,z1,r,s], {z1, -n, n}]\n        * Sum[MakeVariable[D,z1,q,z2,u], {z1, -n, n}, {z2, -n, n}],\n    {q,-n,n}, {r,-n,n}, {s,-n,n}, {u,-n,n}, {i,-n,n}, {k,-n,n} \n]];\nnontriveqs7 = Flatten[Table[\n    Sum[MakeVariable[D,i,z1,k,z2], {z1, -n, n}, {z2, -n, n}]\n        * Sum[MakeVariable[D,z1,q,r,z2], {z1, -n, n}, {z2, -n, n}]\n        * Sum[MakeVariable[D,z1,u,z2,y], {z1, -n, n}, {z2, -n, n}]\n        == Sum[MakeVariable[D,k,z1,r,z2], {z1, -n, n}, {z2, -n, n}]\n        * Sum[MakeVariable[D,i,z1,z2,y], {z1, -n, n}, {z2, -n, n}]\n        * Sum[MakeVariable[D,z1,q,z2,u], {z1, -n, n}, {z2, -n, n}],\n    {i,-n,n}, {k,-n,n}, {q,-n,n}, {r,-n,n}, {u,-n,n}, {y,-n,n} \n]];",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997642137,
+     "endTime": 1705997643456
+    },
+    "executionOrder": 1511,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "nontriveqs = Join[nontriveqs1, nontriveqs2, nontriveqs3, nontriveqs4, nontriveqs5, nontriveqs6, nontriveqs7];\nnontriveqs = nontriveqs /. trivsols;\nnontriveqs = DeleteCases[nontriveqs, True];\nLength[nontriveqs]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><w>True</w><w>,</w><w>True</w><w>,</w><wrow><w></w><w>≪</w><w>5100</w><w>≫</w></wrow><w>,</w><w>True</w></wrow><wb>}</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      }
+     ],
+     "id": "21db4f5d-d62c-42ce-bcbb-5f3e76c93455",
+     "metadata": {
+      "cellLabel": "Out[1519]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>4878</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "4878",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "12b5bfba-76d4-44d0-865b-4eaae0800fd1",
+     "metadata": {
+      "cellLabel": "Out[1521]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997643457,
+     "endTime": 1705997645700
+    },
+    "executionOrder": 1518,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "(* nontriveqs *)\nExport[\"/home/gerard/Documents/Personal/QuantumGroups/nontriveqs.txt\", nontriveqs]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>/home/gerard/Documents/Personal/QuantumGroups/nontriveqs.txt</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "\"/home/gerard/Documents/Personal/QuantumGroups/nontriveqs.txt\"",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "5333e81d-80ea-4a5a-a0b1-32db9ba4a1fc",
+     "metadata": {
+      "cellLabel": "Out[1522]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997645700,
+     "endTime": 1705997646026
+    },
+    "executionOrder": 1522,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "(* DumpSave[\"/home/gerard/Documents/Personal/QuantumGroups/datafile.mx\", nontriveqs] *)",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997646026,
+     "endTime": 1705997646087
+    },
+    "executionOrder": 1523,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "(* NSolve[Join[triveqs, nontriveqs], Join[As, Bs, Cs, Ds], Complexes]; *)",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997646087,
+     "endTime": 1705997646148
+    },
+    "executionOrder": 1524,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "(* FindInstance[Join[triveqs, nontriveqs], Join[As, Bs, Cs, Ds]]; *)",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997646148,
+     "endTime": 1705997646209
+    },
+    "executionOrder": 1525,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "(* smallset = nontriveqs[[1;;14]];\nsmallset = Reduce[smallset, vars, Complexes]\nPut[smallset, \"/home/gerard/Documents/Personal/QuantumGroups/smallset.wl\"] *)",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997646209,
+     "endTime": 1705997646270
+    },
+    "executionOrder": 1526,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "(* smallset = Get[\"/home/gerard/Documents/Personal/QuantumGroups/smallset.wl\"]\nsmallset = Flatten[smallset];\nDimensions[smallset]\nsmallset = Reduce[Join[{smallset}, Flatten[{nontriveqs[[15]]}]], vars, Complexes]\nPut[smallset, \"/home/gerard/Documents/Personal/QuantumGroups/smallset.wl\"] *)",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997646270,
+     "endTime": 1705997646331
+    },
+    "executionOrder": 1527,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "Export[\"/home/gerard/Documents/Personal/QuantumGroups/triveqs.txt\", triveqs]\nsols = FindInstance[Join[Flatten[{nontriveqs[[1;;20]]}], {triveqs}], vars, Complexes, WorkingPrecision -> 4]\nExport[\"/home/gerard/Documents/Personal/QuantumGroups/sols.txt\", sols]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>/home/gerard/Documents/Personal/QuantumGroups/triveqs.txt</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "\"/home/gerard/Documents/Personal/QuantumGroups/triveqs.txt\"",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "a6d0ff75-0fb3-422b-93cd-752e811335c1",
+     "metadata": {
+      "cellLabel": "Out[1546]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><wb>{</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>1.0000000000000000</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$A</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><w>≪</w><w>311</w><w>≫</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wfrac><w><w>17</w></w><w><w></w><w><w>10</w></w></w></wfrac><w>+</w><w>𝕚</w></wrow></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><w>0</w></wrow><w>,</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$D</w><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wfrac><w><w>39</w></w><w><w></w><w><w>10</w></w></w></wfrac><w>+</w><wfrac><w><wrow><w></w><w>22</w><w></w><w>𝕚</w></wrow></w><w><w></w><w><w>5</w></w></w></wfrac></wrow></wrow></wrow><wb>}</wb></wrow><wb>}</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      }
+     ],
+     "id": "d7c3f8d2-cabc-445e-89cb-59f35284aa66",
+     "metadata": {
+      "cellLabel": "Out[1547]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>/home/gerard/Documents/Personal/QuantumGroups/sols.txt</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "\"/home/gerard/Documents/Personal/QuantumGroups/sols.txt\"",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "21ac982d-1f7e-40b7-b3e8-9c49268ed915",
+     "metadata": {
+      "cellLabel": "Out[1548]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997781973,
+     "endTime": 1705997796245
+    },
+    "executionOrder": 1546,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "nontriveqs[[1;;20]]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow><w class=\"symbol\"></w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wrow><w></w><wrow><w></w><w>$B</w><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>0</w><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><wrow><w></w><w>-</w><w>1</w></wrow><wb>]</wb></wrow></wrow><wrow><w></w><wb>[</wb><w>1</w><wb>]</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><w>,</w><wrow><w></w><w>≪</w><w>19</w><w>≫</w></wrow></wrow><wb>}</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      }
+     ],
+     "id": "15d902f1-dd16-41a9-acf9-c649f37bd718",
+     "metadata": {
+      "cellLabel": "Out[1533]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1705997722199,
+     "endTime": 1705997722329
+    },
+    "executionOrder": 1533,
+    "success": true
+   }
+  }
+ ]
+}
